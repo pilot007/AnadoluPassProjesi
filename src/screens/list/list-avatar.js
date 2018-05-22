@@ -10,58 +10,28 @@ import {
   ListItem,
   Text,
   Thumbnail,
+  Image,
   Left,
   Right,
   Body
 } from "native-base";
 import styles from "./styles";
 
-const pratik = require("../../../assets/contacts/pratik.png");
-const sanket = require("../../../assets/contacts/sanket.png");
-const megha = require("../../../assets/contacts/megha.png");
-const atul = require("../../../assets/contacts/atul.png");
-const saurabh = require("../../../assets/contacts/saurabh.png");
-const varun = require("../../../assets/contacts/varun.png");
-const datas = [
-  {
-    img: pratik,
-    text: "Kumar Pratik",
-    note: "Its time to build a difference . .",
-    time: "3:43 pm"
-  },
-  {
-    img: sanket,
-    text: "Kumar Sanket",
-    note: "One needs courage to be happy and smiling all time . . ",
-    time: "1:12 pm"
-  },
-  {
-    img: megha,
-    text: "Megha",
-    note: "Live a life style that matchs your vision",
-    time: "10:03 am"
-  },
-  {
-    img: atul,
-    text: "Atul Ranjan",
-    note: "Failure is temporary, giving up makes it permanent",
-    time: "5:47 am"
-  },
-  {
-    img: saurabh,
-    text: "Saurabh Sahu",
-    note: "The biggest risk is a missed opportunity !!",
-    time: "11:11 pm"
-  },
-  {
-    img: varun,
-    text: "Varun Sahu",
-    note: "Wish I had a Time machine . .",
-    time: "8:54 pm"
-  }
-];
-
 class NHListAvatar extends Component {
+  state = {
+    datas: []
+  }
+    componentDidMount() {
+    let URL = 'http://its.yaz.com.tr/asumService/api/Mobil/getRestoranGetir?enlem=44.0000&boylam=55.0000';
+  
+    fetch(URL)
+    .then(res => res.json())
+    .then(res => {
+      const datas = res.ListRestoran;
+      this.setState({datas});
+      console.log('response:', res.ListRestoran);
+    });
+  }
   render() {
     return (
       <Container style={styles.container}>
@@ -72,30 +42,27 @@ class NHListAvatar extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>List Avatar</Title>
+            <Title>Restoranlar</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
           <List
-            dataArray={datas}
+            dataArray={this.state.datas}
             renderRow={data =>
               <ListItem avatar>
                 <Left>
-                  <Thumbnail small source={data.img} />
+                  <Thumbnail small source={{uri: data.KurumLogo}} />
                 </Left>
                 <Body>
                   <Text>
-                    {data.text}
-                  </Text>
-                  <Text numberOfLines={1} note>
-                    {data.note}
+                    {data.SubeAdi}
                   </Text>
                 </Body>
                 <Right>
                   <Text note>
-                    {data.time}
+                    {data.mesafe}
                   </Text>
                 </Right>
               </ListItem>}

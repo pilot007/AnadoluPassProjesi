@@ -125,6 +125,7 @@ import Actionsheet from "./screens/actionsheet";
 const Drawer = DrawerNavigator(
   {
     Home: { screen: Home },
+    NHList: { screen: NHList },
     Anatomy: { screen: Anatomy },
     Header: { screen: Header },
     Footer: { screen: Footer },
@@ -137,7 +138,6 @@ const Drawer = DrawerNavigator(
     NHForm: { screen: NHForm },
     NHIcon: { screen: NHIcon },
     NHLayout: { screen: NHLayout },
-    NHList: { screen: NHList },
     ListSwipe: { screen: ListSwipe },
     NHRadio: { screen: NHRadio },
     NHSearchbar: { screen: NHSearchbar },

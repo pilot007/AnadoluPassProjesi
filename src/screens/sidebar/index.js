@@ -17,10 +17,66 @@ const drawerCover = require("../../../assets/drawer-cover.png");
 const drawerImage = require("../../../assets/logo-kitchen-sink.png");
 const datas = [
   {
-    name: "Anatomy",
+    name: "Anasayfa",
+    route: "Anatomy",
+    icon: "help-buoy",
+    bg: "#C5F442"
+  },
+  {
+    name: "Profilim",
     route: "Anatomy",
     icon: "phone-portrait",
-    bg: "#C5F442"
+    bg: "#5DCEE2"
+  },
+  {
+    route: "NHListAvatar",
+    name: "Restorantlar",
+    icon: "checkmark-circle",
+    bg: "#DA4437",
+  },
+  {
+    route: "NHListAvatar",
+    name: "Restorantlar Harita",
+    icon: "notifications",
+    bg: "#4DCAE0",
+  },
+  {
+    route: "NHListAvatar",
+    name: "Kampanyalar",
+    icon: "search",
+    bg: "#477EEA",
+  }
+  ,
+  {
+    route: "NHListAvatar",
+    name: "Favorilerim",
+    icon: "lock",
+    bg: "#5DCEE2",
+  },
+  {
+    route: "NHListAvatar",
+    name: "Yardım",
+    icon: "lock",
+    bg: "#5DCEE2",
+  }
+  ,
+  {
+    route: "NHListAvatar",
+    name: "Ayarlar",
+    icon: "lock",
+    bg: "#5DCEE2",
+  },
+  {
+    route: "NHListAvatar",
+    name: "Çıkış",
+    icon: "lock",
+    bg: "#5DCEE2",
+  },
+  {
+    name: "liste",
+    route: "NHList",
+    icon: "lock",
+    bg: "#5DCEE2",
   },
   {
     name: "Actionsheet",
@@ -102,13 +158,6 @@ const datas = [
     icon: "grid",
     bg: "#9F897C",
     types: "5"
-  },
-  {
-    name: "List",
-    route: "NHList",
-    icon: "lock",
-    bg: "#5DCEE2",
-    types: "8"
   },
   {
     name: "ListSwipe",

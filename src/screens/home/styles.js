@@ -1,12 +1,34 @@
 const React = require("react-native");
 const { Dimensions, Platform } = React;
 const deviceHeight = Dimensions.get("window").height;
+const deviceWidth=Dimensions.get("window").width;
 
 export default {
   imageContainer: {
     flex: 1,
     width: null,
-    height: null
+    height: null,
+  },
+  headerText: {
+    width:300,
+    marginTop: 80,
+    left: Platform.OS === "android" ? 40 : 50,
+  },
+  slider:{
+    width:deviceWidth,
+    marginTop: 30,
+  },
+  sliderText:{
+    width:300,
+    height:50,
+    marginTop: 5,
+    left: Platform.OS === "android" ? 40 : 50,
+  },
+  buttonContent:{
+    width:300,
+    height:70,
+    marginTop: 40,
+    left: Platform.OS === "android" ? 40 : 50,
   },
   logoContainer: {
     flex: 1,
@@ -14,11 +36,8 @@ export default {
     marginBottom: 30
   },
   logo: {
-    position: "absolute",
-    left: Platform.OS === "android" ? 40 : 50,
-    top: Platform.OS === "android" ? 35 : 60,
-    width: 280,
-    height: 100
+    width: deviceWidth,
+    height: deviceWidth/2,
   },
   text: {
     color: "#D8D8D8",
